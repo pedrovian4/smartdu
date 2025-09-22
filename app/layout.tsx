@@ -44,6 +44,11 @@ export const metadata: Metadata = {
         sizes: "32x32",
         type: "image/png",
       },
+      {
+        url: "/image.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
     ],
     shortcut: "/image.png",
     apple: [
@@ -53,9 +58,15 @@ export const metadata: Metadata = {
         type: "image/png",
       },
     ],
+    other: [
+      {
+        rel: "icon",
+        url: "/image.png",
+      },
+    ],
   },
   alternates: {
-    canonical: "/",
+    canonical: "https://smartdu.com.br",
   },
   other: {
     "google-site-verification": "your-google-verification-code-here",
@@ -80,6 +91,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
       <body
         className={`${inter.variable} font-sans antialiased`}
       >

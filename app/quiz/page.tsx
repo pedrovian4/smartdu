@@ -204,8 +204,8 @@ export default function QuizPage() {
 
   if (!isQuizStarted) {
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-6">
-        <div className="max-w-lg mx-auto">
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4 sm:p-6">
+        <div className="max-w-lg mx-auto w-full">
           <Card className="border border-slate-200 bg-white">
             <CardHeader className="text-center pb-8 pt-12">
               <div className="flex justify-center mb-6">
@@ -221,10 +221,10 @@ export default function QuizPage() {
               </p>
             </CardHeader>
             
-            <CardContent className="space-y-8 px-12 pb-12">
+            <CardContent className="space-y-6 sm:space-y-8 px-6 sm:px-8 lg:px-12 pb-8 sm:pb-12">
               {/* Quiz Stats */}
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center p-6 bg-emerald-50 rounded-2xl border border-emerald-100">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                <div className="text-center p-4 sm:p-6 bg-emerald-50 rounded-2xl border border-emerald-100">
                   <FileText className="h-8 w-8 text-emerald-600 mx-auto mb-3" />
                   <div className="text-2xl font-bold text-emerald-800 mb-1">
                     {questions.length}
@@ -234,7 +234,7 @@ export default function QuizPage() {
                   </div>
                 </div>
                 
-                <div className="text-center p-6 bg-violet-50 rounded-2xl border border-violet-100">
+                <div className="text-center p-4 sm:p-6 bg-violet-50 rounded-2xl border border-violet-100">
                   <Clock className="h-8 w-8 text-violet-600 mx-auto mb-3" />
                   <div className="text-2xl font-bold text-violet-800 mb-1 font-mono">
                     {formatTime(timeRemaining)}
@@ -246,7 +246,7 @@ export default function QuizPage() {
               </div>
               
               {/* Instructions */}
-              <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
+              <div className="bg-slate-50 rounded-2xl p-4 sm:p-6 border border-slate-100">
                 <div className="flex items-center justify-center gap-2 mb-4">
                   <FileText className="h-5 w-5 text-slate-600" />
                   <h3 className="font-semibold text-slate-900">
@@ -275,7 +275,7 @@ export default function QuizPage() {
 
               <Button 
                 onClick={startQuiz}
-                className="w-full h-16 text-xl font-semibold bg-rose-500 hover:bg-rose-600 border-0 rounded-2xl transition-colors duration-200 flex items-center justify-center gap-3"
+                className="w-full h-12 sm:h-16 text-lg sm:text-xl font-semibold bg-rose-500 hover:bg-rose-600 border-0 rounded-2xl transition-colors duration-200 flex items-center justify-center gap-3"
               >
                 <Play className="h-6 w-6" />
                 Iniciar Simulado
@@ -296,13 +296,13 @@ export default function QuizPage() {
       <div className="min-h-screen bg-white">
         {/* Header */}
         <div className="bg-white border-b border-slate-100">
-          <div className="max-w-7xl mx-auto px-6 py-6">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-6">
+            <div className="flex items-center justify-between flex-wrap gap-4">
+              <div className="flex items-center gap-3 sm:gap-4 min-w-0">
                 <Image src="/image.png" alt="ENEM Logo" width={36} height={36} className="rounded-lg" />
-                <div>
-                  <h1 className="text-2xl font-semibold text-slate-900">Resultado do Simulado</h1>
-                  <p className="text-sm text-slate-600">Confira seu desempenho e revise as questões</p>
+                <div className="min-w-0">
+                  <h1 className="text-xl sm:text-2xl font-semibold text-slate-900">Resultado do Simulado</h1>
+                  <p className="text-xs sm:text-sm text-slate-600">Confira seu desempenho e revise as questões</p>
                 </div>
               </div>
               <Link href="/">
@@ -315,32 +315,32 @@ export default function QuizPage() {
           </div>
         </div>
 
-        <div className="max-w-6xl mx-auto px-6 py-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
           {/* Score Summary */}
           <div className="text-center mb-12">
-            <div className={`text-7xl font-bold ${getScoreColor()} mb-4`}>
+            <div className={`text-4xl sm:text-6xl lg:text-7xl font-bold ${getScoreColor()} mb-4`}>
               {score}/{questions.length}
             </div>
-            <div className="text-2xl text-slate-700 mb-6">
+            <div className="text-lg sm:text-xl lg:text-2xl text-slate-700 mb-6">
               Você acertou {Math.round((score / questions.length) * 100)}% das questões
             </div>
             <Progress 
               value={(score / questions.length) * 100} 
-              className="w-80 mx-auto h-4"
+              className="w-64 sm:w-80 mx-auto h-3 sm:h-4"
             />
             
             {/* Performance Stats */}
-            <div className="grid md:grid-cols-3 gap-6 mt-12 max-w-2xl mx-auto">
-              <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
-                <div className="text-3xl font-semibold text-emerald-600 mb-2">{score}</div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-12 max-w-2xl mx-auto">
+              <div className="bg-slate-50 rounded-2xl p-4 sm:p-6 border border-slate-100">
+                <div className="text-2xl sm:text-3xl font-semibold text-emerald-600 mb-2">{score}</div>
                 <div className="text-sm font-medium text-slate-700">Acertos</div>
               </div>
-              <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
-                <div className="text-3xl font-semibold text-red-500 mb-2">{questions.length - score}</div>
+              <div className="bg-slate-50 rounded-2xl p-4 sm:p-6 border border-slate-100">
+                <div className="text-2xl sm:text-3xl font-semibold text-red-500 mb-2">{questions.length - score}</div>
                 <div className="text-sm font-medium text-slate-700">Erros</div>
               </div>
-              <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
-                <div className="text-3xl font-semibold text-indigo-600 mb-2">{Math.round((score / questions.length) * 100)}%</div>
+              <div className="bg-slate-50 rounded-2xl p-4 sm:p-6 border border-slate-100">
+                <div className="text-2xl sm:text-3xl font-semibold text-indigo-600 mb-2">{Math.round((score / questions.length) * 100)}%</div>
                 <div className="text-sm font-medium text-slate-700">Aproveitamento</div>
               </div>
             </div>
@@ -355,12 +355,12 @@ export default function QuizPage() {
               <p className="text-slate-600">Clique em uma questão para ver os detalhes</p>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-5 md:grid-cols-10 gap-3 mb-6">
+              <div className="grid grid-cols-5 sm:grid-cols-8 md:grid-cols-10 gap-2 sm:gap-3 mb-6">
                 {results.map((result, index) => (
                   <button
                     key={index}
                     onClick={() => setSelectedQuestionReview(selectedQuestionReview === index ? null : index)}
-                    className={`w-12 h-12 rounded-xl text-sm font-semibold transition-all duration-200 ${
+                    className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 ${
                       result.isCorrect 
                         ? "bg-emerald-100 text-emerald-700 border border-emerald-300 hover:bg-emerald-200" 
                         : "bg-red-100 text-red-700 border border-red-300 hover:bg-red-200"
@@ -374,7 +374,7 @@ export default function QuizPage() {
               {/* Question Detail */}
               {selectedQuestionReview !== null && (
                 <div className="border-t border-slate-100 pt-6">
-                  <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                  <div className="bg-slate-50 rounded-2xl p-4 sm:p-6 border border-slate-100">
                     <div className="flex items-center gap-3 mb-4">
                       <Badge className="px-3 py-1 bg-slate-100 text-slate-700 border-0">
                         {questions[selectedQuestionReview].year}
@@ -389,7 +389,7 @@ export default function QuizPage() {
                       )}
                     </div>
                     
-                    <h3 className="text-lg font-semibold text-slate-900 mb-4">
+                    <h3 className="text-base sm:text-lg font-semibold text-slate-900 mb-4">
                       {questions[selectedQuestionReview].title}
                     </h3>
                     
@@ -484,25 +484,25 @@ export default function QuizPage() {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <div className="bg-white border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
+          <div className="flex items-center justify-between flex-wrap gap-4">
+            <div className="flex items-center gap-3 sm:gap-4 min-w-0">
               <Image src="/image.png" alt="ENEM Logo" width={36} height={36} className="rounded-lg" />
-              <div>
-                <h1 className="text-xl font-semibold text-slate-900">Simulado ENEM</h1>
-                <p className="text-sm text-slate-600">Questão {currentQuestion + 1} de {questions.length}</p>
+              <div className="min-w-0">
+                <h1 className="text-lg sm:text-xl font-semibold text-slate-900">Simulado ENEM</h1>
+                <p className="text-xs sm:text-sm text-slate-600">Questão {currentQuestion + 1} de {questions.length}</p>
               </div>
             </div>
             
-            <div className="flex items-center gap-6">
-              <div className="flex items-center gap-3 text-base">
+            <div className="flex items-center gap-3 sm:gap-6">
+              <div className="flex items-center gap-2 sm:gap-3 text-sm sm:text-base">
                 <Clock className="h-5 w-5 text-violet-500" />
-                <span className="font-mono text-lg text-slate-900">{formatTime(timeRemaining)}</span>
+                <span className="font-mono text-base sm:text-lg text-slate-900">{formatTime(timeRemaining)}</span>
               </div>
               <Button 
                 onClick={finishQuiz} 
                 variant="outline" 
-                className="border-slate-200 hover:bg-slate-50"
+                className="border-slate-200 hover:bg-slate-50 text-xs sm:text-sm px-2 sm:px-4"
               >
                 <Flag className="h-4 w-4 mr-2" />
                 Finalizar
@@ -517,22 +517,22 @@ export default function QuizPage() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto p-6">
-        <div className="grid lg:grid-cols-4 gap-8">
+      <div className="max-w-6xl mx-auto p-4 sm:p-6">
+        <div className="grid lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {/* Question Navigation */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 order-2 lg:order-1">
             <Card className="sticky top-6 border border-slate-200">
               <CardHeader className="pb-4">
                 <CardTitle className="text-base font-semibold text-slate-900">Navegação</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-5 gap-3">
+                <div className="grid grid-cols-5 sm:grid-cols-6 lg:grid-cols-5 gap-2 sm:gap-3">
                   {questions.map((_, index) => (
                     <button
                       key={index}
                       onClick={() => goToQuestion(index)}
                       className={`
-                        w-10 h-10 rounded-xl text-sm font-semibold transition-all duration-200
+                        w-8 h-8 sm:w-10 sm:h-10 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200
                         ${currentQuestion === index 
                           ? "bg-rose-500 text-white" 
                           : selectedAnswers[index]
@@ -565,42 +565,42 @@ export default function QuizPage() {
           </div>
 
           {/* Main Question */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3 order-1 lg:order-2">
             <Card className="border border-slate-200">
-              <CardHeader className="pb-6">
+              <CardHeader className="pb-4 sm:pb-6">
                 <div className="flex items-center gap-3 mb-4">
                   <Badge className="px-3 py-1 bg-slate-100 text-slate-700 border-0">{currentQ.year}</Badge>
                   <Badge className="px-3 py-1 bg-rose-100 text-rose-700 border-0">{currentQ.discipline}</Badge>
                 </div>
-                <CardTitle className="text-2xl font-semibold text-slate-900">{currentQ.title}</CardTitle>
+                <CardTitle className="text-lg sm:text-xl lg:text-2xl font-semibold text-slate-900">{currentQ.title}</CardTitle>
               </CardHeader>
               
-              <CardContent className="space-y-8">
+              <CardContent className="space-y-4 sm:space-y-6 lg:space-y-8">
                 {/* Question Context */}
                 <div className="prose max-w-none">
-                  <p className="text-slate-700 text-lg leading-relaxed whitespace-pre-line">
+                  <p className="text-slate-700 text-sm sm:text-base lg:text-lg leading-relaxed whitespace-pre-line">
                     {currentQ.context}
                   </p>
                 </div>
 
                 {/* Alternatives Introduction */}
-                <div className="font-semibold text-slate-900 text-lg">
+                <div className="font-semibold text-slate-900 text-base sm:text-lg">
                   {currentQ.alternativesIntroduction}
                 </div>
 
                 {/* Alternatives */}
-                <div className="space-y-3">
+                <div className="space-y-2 sm:space-y-3">
                   {currentQ.alternatives.map((alt) => (
                     <button
                       key={alt.letter}
                       onClick={() => selectAnswer(currentQuestion, alt.letter)}
-                      className={`w-full flex items-start space-x-4 p-5 rounded-xl border transition-all duration-200 text-left ${
+                      className={`w-full flex items-start space-x-3 sm:space-x-4 p-3 sm:p-4 lg:p-5 rounded-xl border transition-all duration-200 text-left ${
                         selectedAnswers[currentQuestion] === alt.letter
                           ? "border-rose-500 bg-rose-50 shadow-md"
                           : "border-slate-200 hover:border-slate-300 hover:bg-slate-50"
                       }`}
                     >
-                      <div className={`flex-shrink-0 w-6 h-6 rounded-full border-2 mt-1 flex items-center justify-center ${
+                      <div className={`flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 mt-1 flex items-center justify-center ${
                         selectedAnswers[currentQuestion] === alt.letter
                           ? "border-rose-500 bg-rose-500"
                           : "border-slate-300"
@@ -617,7 +617,7 @@ export default function QuizPage() {
                         }`}>
                           ({alt.letter})
                         </span>
-                        <span className={`text-base leading-relaxed ${
+                        <span className={`text-sm sm:text-base leading-relaxed ${
                           selectedAnswers[currentQuestion] === alt.letter
                             ? "text-rose-900"
                             : "text-slate-700"
@@ -630,12 +630,12 @@ export default function QuizPage() {
                 </div>
 
                 {/* Navigation Buttons */}
-                <div className="flex justify-between pt-8 border-t border-slate-100">
+                <div className="flex justify-between pt-4 sm:pt-6 lg:pt-8 border-t border-slate-100 flex-wrap gap-4">
                   <Button 
                     onClick={previousQuestion}
                     disabled={currentQuestion === 0}
                     variant="outline"
-                    className="border-slate-200 hover:bg-slate-50"
+                    className="border-slate-200 hover:bg-slate-50 text-sm sm:text-base px-3 sm:px-4"
                   >
                     <ArrowLeft className="h-4 w-4 mr-2" />
                     Anterior
@@ -644,7 +644,7 @@ export default function QuizPage() {
                   {currentQuestion === questions.length - 1 ? (
                     <Button 
                       onClick={finishQuiz} 
-                      className="bg-emerald-500 hover:bg-emerald-600 border-0"
+                      className="bg-emerald-500 hover:bg-emerald-600 border-0 text-sm sm:text-base px-3 sm:px-4"
                     >
                       <Flag className="h-4 w-4 mr-2" />
                       Finalizar Simulado
@@ -652,7 +652,7 @@ export default function QuizPage() {
                   ) : (
                     <Button 
                       onClick={nextQuestion}
-                      className="bg-rose-500 hover:bg-rose-600 border-0"
+                      className="bg-rose-500 hover:bg-rose-600 border-0 text-sm sm:text-base px-3 sm:px-4"
                     >
                       Próxima
                       <ArrowRight className="h-4 w-4 ml-2" />

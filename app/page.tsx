@@ -61,23 +61,23 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       <Header />
 
-      <div className="max-w-6xl mx-auto px-4 py-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
         <HeroSection />
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {/* Configuration Panel */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 order-2 lg:order-1">
             <Card className="border border-slate-200 bg-white">
-              <CardHeader className="pb-8">
-                <CardTitle className="flex items-center gap-3 text-2xl text-slate-900 font-semibold">
-                  <Settings className="h-7 w-7 text-rose-500" />
+              <CardHeader className="pb-4 sm:pb-6 lg:pb-8">
+                <CardTitle className="flex items-center gap-2 sm:gap-3 text-xl sm:text-2xl text-slate-900 font-semibold">
+                  <Settings className="h-6 w-6 sm:h-7 sm:w-7 text-rose-500" />
                   Configure seu Simulado
                 </CardTitle>
-                <p className="text-base text-slate-600 mt-3 leading-relaxed">
+                <p className="text-sm sm:text-base text-slate-600 mt-2 sm:mt-3 leading-relaxed">
                   Personalize sua experiência de estudos selecionando os parâmetros abaixo
                 </p>
               </CardHeader>
-              <CardContent className="space-y-8">
+              <CardContent className="space-y-4 sm:space-y-6 lg:space-y-8">
                 <QuestionCountSelector 
                   questionCounts={questionCounts}
                   selectedCount={selectedQuestionCount}
@@ -104,17 +104,19 @@ export default function Home() {
           </div>
 
           {/* Action Panel */}
-          <QuizSummary 
+          <div className="order-1 lg:order-2">
+            <QuizSummary 
             selectedQuestionCount={selectedQuestionCount}
             selectedYears={selectedYears}
             selectedDisciplines={selectedDisciplines}
             onStartQuiz={startQuiz}
             isDisabled={selectedDisciplines.length === 0 || selectedYears.length === 0}
-          />
+            />
+          </div>
         </div>
 
         {/* Footer */}
-        <div className="text-center mt-20 text-slate-500 text-sm">
+        <div className="text-center mt-12 sm:mt-16 lg:mt-20 text-slate-500 text-xs sm:text-sm px-4">
           <p>Totalmente gratuito • Questões oficiais do ENEM • Acesse quando quiser</p>
         </div>
       </div>

@@ -13,17 +13,17 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "SmartDU - Questões ENEM 2024 Gratuitas | Simulados Online, Gabarito e Preparação Completa",
   description: "🎓 Resolva +5000 questões do ENEM GRÁTIS! Simulados online, gabarito comentado, cronômetro e ranking. Matemática, Português, História, Geografia, Física, Química, Biologia. Sem cadastro! Acesse agora e garante sua aprovação! 📚✨",
-  keywords: "ENEM 2024, questões ENEM gratis, simulado ENEM online, gabarito ENEM, preparação ENEM, vestibular, concurso público, ensino médio, exercícios ENEM, prova ENEM, matemática ENEM, português ENEM, redação ENEM, ciências natureza ENEM, ciências humanas ENEM, linguagens ENEM, fisica ENEM, quimica ENEM, biologia ENEM, historia ENEM, geografia ENEM, filosofia ENEM, sociologia ENEM, literatura ENEM, ingles ENEM, espanhol ENEM, cronometro simulado, ranking estudantes, sem cadastro, gratuito, estudar online, preparação vestibular, ProUni, SISU, FIES, universidade publica, faculdade",
-  authors: [{ name: "SmartDU" }],
-  creator: "SmartDU",
-  publisher: "SmartDU",
+  keywords: "ENEM 2024, questões ENEM gratis, simulado ENEM online, gabarito ENEM, preparação ENEM, vestibular, concurso público, ensino médio, exercícios ENEM, prova ENEM, matemática ENEM, português ENEM, redação ENEM, ciências natureza ENEM, ciências humanas ENEM, linguagens ENEM, fisica ENEM, quimica ENEM, biologia ENEM, historia ENEM, geografia ENEM, filosofia ENEM, sociologia ENEM, literatura ENEM, ingles ENEM, espanhol ENEM, cronometro simulado, ranking estudantes, sem cadastro, gratuito, estudar online, preparação vestibular, ProUni, SISU, FIES, universidade publica, faculdade, estuda.com, descomplica, USP, Unifap, FUVEST",
+  authors: [{ name: "Smartdu" }],
+  creator: "Smartdu",
+  publisher: "Smartdu",
   robots: "index, follow",
   openGraph: {
     title: "🎓 SmartDU - +5000 Questões ENEM 2024 GRÁTIS | Simulados Online",
     description: "Resolva questões do ENEM gratuitamente! Simulados com cronômetro, gabarito comentado e ranking. Matemática, Português, Ciências. Sem cadastro! 📚✨",
     type: "website",
     locale: "pt_BR",
-    siteName: "SmartDU - Preparação ENEM Gratuita",
+    siteName: "Smartdu - Preparação ENEM Gratuita",
     images: [
       {
         url: "/image.png",
@@ -106,7 +106,6 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
 
-        <AdSense slot="1628806935" style={{ display: "inline-block", width: "300px", height: "250px" }} />
 
         <script
           type="application/ld+json"
@@ -165,6 +164,7 @@ export default function RootLayout({
           }}
         />
         {children}
+        <AdSense slot="1628806935" style={{ display: "inline-block", width: "300px", height: "250px" }} />
       </body>
     </html>
   );

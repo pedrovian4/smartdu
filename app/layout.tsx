@@ -94,6 +94,7 @@ export default function RootLayout({
     <html lang="pt-BR">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
       </head>
       <body
         className={`${inter.variable} font-sans antialiased`}
@@ -104,6 +105,14 @@ export default function RootLayout({
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
+        <amp-ad width="100vw" height="320"
+          type="adsense"
+          data-ad-client="ca-pub-9307683513545162"
+          data-ad-slot="1628806935"
+          data-auto-format="rspv"
+          data-full-width="">
+          <div overflow=""></div>
+        </amp-ad>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -150,8 +159,8 @@ export default function RootLayout({
               },
               "educationalLevel": "Ensino Médio",
               "teaches": [
-                "ENEM", "Vestibular", "Matemática", "Português", "Física", "Química", 
-                "Biologia", "História", "Geografia", "Filosofia", "Sociologia", 
+                "ENEM", "Vestibular", "Matemática", "Português", "Física", "Química",
+                "Biologia", "História", "Geografia", "Filosofia", "Sociologia",
                 "Literatura", "Inglês", "Espanhol", "Redação"
               ],
               "keywords": "ENEM, questões gratuitas, simulado online, vestibular, ensino médio, preparação, gabarito",

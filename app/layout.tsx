@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import AdSense from "@/components/AdSense";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -158,6 +159,7 @@ export default function RootLayout({
         />
         {children}
         <AdSense />
+        <Analytics />
       </body>
     </html>
   );

@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "SmartDU - Questões ENEM 2024 Gratuitas | Simulados Online, Gabarito e Preparação Completa",
+  title: "Smartdu - Simulado de Vestibulares gratuitamente",
   description: "🎓 Resolva +5000 questões do ENEM GRÁTIS! Simulados online, gabarito comentado, cronômetro e ranking. Matemática, Português, História, Geografia, Física, Química, Biologia. Sem cadastro! Acesse agora e garante sua aprovação! 📚✨",
   keywords: "ENEM 2024, questões ENEM gratis, simulado ENEM online, gabarito ENEM, preparação ENEM, vestibular, concurso público, ensino médio, exercícios ENEM, prova ENEM, matemática ENEM, português ENEM, redação ENEM, ciências natureza ENEM, ciências humanas ENEM, linguagens ENEM, fisica ENEM, quimica ENEM, biologia ENEM, historia ENEM, geografia ENEM, filosofia ENEM, sociologia ENEM, literatura ENEM, ingles ENEM, espanhol ENEM, cronometro simulado, ranking estudantes, sem cadastro, gratuito, estudar online, preparação vestibular, ProUni, SISU, FIES, universidade publica, faculdade, estuda.com, descomplica, USP, Unifap, FUVEST",
   authors: [{ name: "Smartdu" }],

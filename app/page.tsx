@@ -32,16 +32,16 @@ export default function Home() {
   const [selectedDisciplines, setSelectedDisciplines] = useState<string[]>(["matematica"]);
 
   const handleYearToggle = (year: number) => {
-    setSelectedYears(prev => 
-      prev.includes(year) 
+    setSelectedYears(prev =>
+      prev.includes(year)
         ? prev.filter(y => y !== year)
         : [...prev, year]
     );
   };
 
   const handleDisciplineToggle = (discipline: string) => {
-    setSelectedDisciplines(prev => 
-      prev.includes(discipline) 
+    setSelectedDisciplines(prev =>
+      prev.includes(discipline)
         ? prev.filter(d => d !== discipline)
         : [...prev, discipline]
     );
@@ -53,7 +53,7 @@ export default function Home() {
       years: selectedYears.join(','),
       disciplines: selectedDisciplines.join(',')
     });
-    
+
     window.location.href = `/quiz?${params.toString()}`;
   };
 
@@ -78,7 +78,7 @@ export default function Home() {
                 </p>
               </CardHeader>
               <CardContent className="space-y-4 sm:space-y-6 lg:space-y-8">
-                <QuestionCountSelector 
+                <QuestionCountSelector
                   questionCounts={questionCounts}
                   selectedCount={selectedQuestionCount}
                   onCountChange={setSelectedQuestionCount}
@@ -86,7 +86,7 @@ export default function Home() {
 
                 <div className="border-t border-slate-100"></div>
 
-                <YearSelector 
+                <YearSelector
                   availableYears={availableYears}
                   selectedYears={selectedYears}
                   onYearToggle={handleYearToggle}
@@ -94,7 +94,7 @@ export default function Home() {
 
                 <div className="border-t border-slate-100"></div>
 
-                <DisciplineSelector 
+                <DisciplineSelector
                   disciplines={disciplines}
                   selectedDisciplines={selectedDisciplines}
                   onDisciplineToggle={handleDisciplineToggle}
@@ -105,12 +105,12 @@ export default function Home() {
 
           {/* Action Panel */}
           <div className="order-1 lg:order-2">
-            <QuizSummary 
-            selectedQuestionCount={selectedQuestionCount}
-            selectedYears={selectedYears}
-            selectedDisciplines={selectedDisciplines}
-            onStartQuiz={startQuiz}
-            isDisabled={selectedDisciplines.length === 0 || selectedYears.length === 0}
+            <QuizSummary
+              selectedQuestionCount={selectedQuestionCount}
+              selectedYears={selectedYears}
+              selectedDisciplines={selectedDisciplines}
+              onStartQuiz={startQuiz}
+              isDisabled={selectedDisciplines.length === 0 || selectedYears.length === 0}
             />
           </div>
         </div>
@@ -120,6 +120,7 @@ export default function Home() {
           <p>Totalmente gratuito • Questões oficiais do ENEM • Acesse quando quiser</p>
         </div>
       </div>
+
     </div>
   );
 }

@@ -99,14 +99,6 @@ export default function RootLayout({
       <body
         className={`${inter.variable} font-sans antialiased`}
       >
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9307683513545162"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
-
-
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -164,7 +156,7 @@ export default function RootLayout({
           }}
         />
         {children}
-        <AdSense slot="1628806935" style={{ display: "inline-block", width: "300px", height: "250px" }} />
+        <AdSense />
       </body>
     </html>
   );

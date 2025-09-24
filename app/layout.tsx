@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import AdSense from "@/components/AdSense";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "🎓 SmartDU - +5000 Questões ENEM 2024 GRÁTIS",
+    title: "🎓 Smartdu - +5000 Questões ENEM 2024 GRÁTIS",
     description: "Simulados online com cronômetro e gabarito comentado! Matemática, Português, Ciências. Sem cadastro! 📚✨",
     images: ["/image.png"],
   },
@@ -94,7 +95,6 @@ export default function RootLayout({
     <html lang="pt-BR">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
       </head>
       <body
         className={`${inter.variable} font-sans antialiased`}
@@ -105,14 +105,9 @@ export default function RootLayout({
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
-        <amp-ad width="100vw" height="320"
-          type="adsense"
-          data-ad-client="ca-pub-9307683513545162"
-          data-ad-slot="1628806935"
-          data-auto-format="rspv"
-          data-full-width="">
-          <div overflow=""></div>
-        </amp-ad>
+
+        <AdSense slot="1628806935" style={{ display: "inline-block", width: "300px", height: "250px" }} />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
